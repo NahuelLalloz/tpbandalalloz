@@ -1,0 +1,30 @@
+<?php require 'app/templates/agregarPeli.phtml' ?>
+<div>
+    <ul class="list-group">
+        <?php foreach($peliculas as $pelicula): ?>
+            <div class="table-light d-flex justify-content-between">
+                <table class="table">
+                    <td><a href='viewPeli/<?= $pelicula->id_pelicula ?>'>
+                        <?= $pelicula->nombre ?>
+                        (Nombre Servicio:<?= $pelicula->nombre_servicio ?>) (ID_PELICULA <?= $pelicula->id_pelicula?>)</td></a> 
+                </table>
+        
+        <?php if (!isset($_SESSION['USER_ID'])) : ?>
+        
+        <?php else : ?>
+            <div class="actions">
+            <a href="delete/<?= $pelicula->id_pelicula ?>" type="button" class='btn btn-danger ml-auto'>Borrar</a>
+            </div>
+        <?php endif ?>
+</div> 
+        
+<?php endforeach ?>
+<?php require 'app/templates/editarPeli.phtml' ?>  
+</ul>  
+        </div>
+   
+    </div>
+    <p class="mt-3"><small>Mostrando <?= $count ?> Peliculas y/o series</small></p>
+
+<?php 
+?>

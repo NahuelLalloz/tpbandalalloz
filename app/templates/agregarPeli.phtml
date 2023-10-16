@@ -1,0 +1,102 @@
+<?php require 'app/templates/header.phtml' ?>
+<?php if (isset($_SESSION['USER_ID'])) : ?>
+    <form action="agregar" method="POST" class="my-4">
+    <div class="row">
+        <div>
+            <div class="form-group">
+                <label>ID PELICULA</label>
+                <input required name="id_pelicula" type="number" class="form-control">
+            </div>
+            <div class="form-group">
+                <label>Nombre</label>
+                <input required name="nombre" type="text" class="form-control">
+            </div>
+            <div class="form-group">
+                <label>Director</label>
+                <input required name="director" type="text" class="form-control">
+            </div>
+            <div class="form-group">
+    <label>Tipo</label>
+    <select required name="tipo" class="form-control">
+        <option value="Pelicula">Película</option>
+        <option value="Serie">Serie</option>
+    </select>
+    <div class="form-group">
+    <label>Genero</label>
+    <select required name="genero" class="form-control">  
+    <option value="Accion">Acción</option>
+    <option value="Aventura">Aventura</option>
+    <option value="Comedia">Comedia</option>
+    <option value="Drama">Drama</option>
+    <option value="Ciencia ficcion">Ciencia Ficción</option>
+    <option value="Fantasia">Fantasía</option>
+    <option value="Terror">Terror</option>
+    <option value="Documental">Documental</option>
+    <option value="Otro">Otro</option>
+    
+</select>
+    </select>
+</div>
+<div class="form-group">
+    <label>Servicio FK</label>
+    <select name="servicio_fk" class="form-control">
+        <option value="">Seleccione un servicio</option>
+        <?php foreach ($servicios as $s) : ?>
+            <option value="<?php echo $s->id_servicio_streaming?>"><?php echo $s->nombre ?></option> 
+        <?php endforeach; ?>
+    </select>
+</div>
+<div>
+<button type="submit" class="btn btn-outline-success d-grid gap-2 col-6 mx-auto my-4">Guardar</button>
+</div>
+</form>
+        <?php else : ?>
+            <form action="login" method="POST" class="my-4">
+    <div class="row">
+        <div>
+            <div class="form-group">
+                <label>ID PELICULA</label>
+                <input required name="id_pelicula" type="number" class="form-control">
+            </div>
+            <div class="form-group">
+                <label>Nombre</label>
+                <input required name="nombre" type="text" class="form-control">
+            </div>
+            <div class="form-group">
+                <label>Director</label>
+                <input required name="director" type="text" class="form-control">
+            </div>
+            <div class="form-group">
+    <label>Tipo</label>
+    <select required name="tipo" class="form-control">
+        <option value="Pelicula">Película</option>
+        <option value="Serie">Serie</option>
+    </select>
+    <div class="form-group">
+    <label>Genero</label>
+    <select required name="genero" class="form-control">  
+    <option value="Accion">Acción</option>
+    <option value="Aventura">Aventura</option>
+    <option value="Comedia">Comedia</option>
+    <option value="Drama">Drama</option>
+    <option value="Ciencia ficcion">Ciencia Ficción</option>
+    <option value="Fantasia">Fantasía</option>
+    <option value="Terror">Terror</option>
+    <option value="Documental">Documental</option>
+    <option value="Otro">Otro</option>
+    
+</select>
+    </select>
+</div>
+
+<select name="servicio_fk" class="form-control">
+        <option value="">Seleccione un servicio</option>
+        <?php foreach ($servicios as $s) : ?>
+            <option value="<?php echo $s->id_servicio_streaming?>"><?php echo $s->nombre ?></option> 
+        <?php endforeach; ?>
+    </select>
+            <div>
+            <button type="submit" class="btn btn-outline-success d-grid gap-2 col-6 mx-auto my-4">Agregar</button>
+            </div>
+</form>
+<?php endif ?>
