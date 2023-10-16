@@ -1,3 +1,4 @@
+# La segunda entrega esta en la rama master!
 # Integrantes: Banda Martin (martinbanda12@gmail.com) - Lalloz Nahuel (nahunahuesc@gmail.com)
 # Tematica: Peliculas
 # Descripción de la tematica: Pagina web donde se encontraran peliculas y su respectivo servicio para poder verlas.
