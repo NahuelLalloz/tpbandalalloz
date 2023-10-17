@@ -1,8 +1,8 @@
 <?php
 
 require_once 'app/models/config.php';
-class StreamingModel{
-    private $db;
+class StreamingModel extends Model{
+  
 
     function __construct() {
         $this->db = new PDO('mysql:host=' . DB_HOST . ';dbname=pelispa;charset=' . DB_Charset, DB_USER, DB_PASS);

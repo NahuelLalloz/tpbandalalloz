@@ -1,8 +1,8 @@
 <?php
 require_once 'app/models/config.php';
-class loginModel{
+class loginModel extends Model{
 
-    private $db;
+
 
     public function __construct(){
         $this->db = new PDO('mysql:host=localhost;dbname=pelispa;charset=utf8', 'root', '');

@@ -1,7 +1,7 @@
 <?php
 require_once 'app/models/config.php';
-class PeliModel {
-    private $db;
+class PeliModel extends Model{
+
 
     function __construct() {
         $this->db = new PDO('mysql:host=' . DB_HOST . ';dbname=pelispa;charset=' . DB_Charset, DB_USER, DB_PASS);
