@@ -42,7 +42,7 @@
     <select name="servicio_fk" class="form-control">
         <option value="">Seleccione un servicio</option>
         <?php foreach ($servicios as $s) : ?>
-            <option value="<?php echo $s->id_servicio_streaming?>"><?php echo $s->nombre ?></option> 
+            <option value="<?=$s->id_servicio_streaming?>"><?= $s->nombre ?></option> 
         <?php endforeach; ?>
     </select>
 </div>
@@ -92,7 +92,7 @@
 <select name="servicio_fk" class="form-control">
         <option value="">Seleccione un servicio</option>
         <?php foreach ($servicios as $s) : ?>
-            <option value="<?php echo $s->id_servicio_streaming?>"><?php echo $s->nombre ?></option> 
+            <option value="<?=$s->id_servicio_streaming?>"><?= $s->nombre ?></option> 
         <?php endforeach; ?>
     </select>
             <div>

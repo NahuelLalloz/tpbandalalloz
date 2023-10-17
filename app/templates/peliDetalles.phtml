@@ -12,12 +12,12 @@
     </tr>
     <?php foreach ($peliculas as $pelicula ) { ?>
         <tr>
-            <td class="table-light"><?php echo $pelicula->nombre ?></td>
-            <td class="table-light"><?php echo $pelicula->director ?></td>
-            <td class="table-light"><?php echo $pelicula->nombre_servicio ?></td>
+            <td class="table-light"><?= $pelicula->nombre ?></td>
+            <td class="table-light"><?= $pelicula->director ?></td>
+            <td class="table-light"><?= $pelicula->nombre_servicio ?></td>
           
-            <td class="table-light"><?php echo $pelicula->tipo ?></td>
-            <td class="table-light"> <?php echo $pelicula->genero ?></td>
+            <td class="table-light"><?=$pelicula->tipo ?></td>
+            <td class="table-light"> <?=$pelicula->genero ?></td>
         </tr>
         
     <?php } ?>
